@@ -14,6 +14,7 @@
   "scripts": {
     "build": "rm -fr dist/* && npm run build:packages",
     "build:packages": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && node ./scripts/set-package-json.js",
+    "publish-package": "npm run build && npm run docs && git add . && git commit -m 'Publish to NPM' && git push && npm publish",
     "test": "jest",
     "test:all": "jest --all",
     "test:watch": "jest --watch",
